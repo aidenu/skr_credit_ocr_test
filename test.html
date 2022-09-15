@@ -102,8 +102,10 @@
     if(navigator.getUserMedia) {
         navigator.mediaDevices.getUserMedia(constraints)
                         .then(function(stream) {
-                            track = stream.getTracks()[0];
                             cameraVideo.srcObject = stream;
+                            cameraVideo.onloadedmetadata = function(e) {
+                                cameraVideo.play();
+                            };
                         })
                         .catch(function(e) {
                             alert("카메라에 문제가 있습니다.", error);
