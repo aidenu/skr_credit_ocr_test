@@ -105,7 +105,7 @@
         cameraVideo.setAttribute('muted', '');
         cameraVideo.setAttribute('playsinline', '');
 
-        navigator.mediaDevices.getUserMedia(constraints)
+        navigator.getUserMedia(constraints)
                         .then(function success(stream) {
                             cameraVideo.srcObject = stream;
                             cameraVideo.onloadedmetadata = function(e) {
