@@ -97,10 +97,12 @@
    * */
   function cameraStart(){
     alert("STEP1");
+    console.log("STEP1");
     navigator.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     if(navigator.getUserMedia) {
         alert("STEP2");
+        console.log("STEP2");
         cameraVideo.setAttribute('autoplay', '');
         cameraVideo.setAttribute('muted', '');
         cameraVideo.setAttribute('playsinline', '');
@@ -114,10 +116,11 @@
                         })
                         .catch(function(error) {
                             alert("카메라에 문제가 있습니다.\n" + error.name + "\n" + error.message);
+                            console.log("카메라에 문제가 있습니다.\n" + error.name + "\n" + error.message);
                         })
     } else {
-        alert("STEP3");
-        alert("getUserMedia() not available.")
+        alert("STEP3 :: getUserMedia() not available.");
+        console.log("STEP3 :: getUserMedia() not available.");
     }
   }
   //촬영 버튼 클릭 리스너
