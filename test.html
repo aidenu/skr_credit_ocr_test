@@ -100,6 +100,7 @@
     navigator.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     if(navigator.getUserMedia) {
+        alert("STEP1");
         navigator.mediaDevices.getUserMedia(constraints)
                         .then(function(stream) {
                             cameraVideo.srcObject = stream;
@@ -111,6 +112,7 @@
                             alert("카메라에 문제가 있습니다.", error);
                         })
     } else {
+        alert("STEP2");
         alert("getUserMedia() not available.")
     }
 
