@@ -101,8 +101,12 @@
 
     if(navigator.getUserMedia) {
         alert("STEP2");
+        cameraVideo.setAttribute('autoplay', '');
+        cameraVideo.setAttribute('muted', '');
+        cameraVideo.setAttribute('playsinline', '');
+
         navigator.mediaDevices.getUserMedia(constraints)
-                        .then(function(stream) {
+                        .then(function success(stream) {
                             cameraVideo.srcObject = stream;
                             cameraVideo.onloadedmetadata = function(e) {
                                 cameraVideo.play();
