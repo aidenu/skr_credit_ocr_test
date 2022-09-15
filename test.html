@@ -96,11 +96,11 @@
    * 카메라 실행 함수
    * */
   function cameraStart(){
-
+    alert("STEP1");
     navigator.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     if(navigator.getUserMedia) {
-        alert("STEP1");
+        alert("STEP2");
         navigator.mediaDevices.getUserMedia(constraints)
                         .then(function(stream) {
                             cameraVideo.srcObject = stream;
@@ -112,7 +112,7 @@
                             alert("카메라에 문제가 있습니다.", error);
                         })
     } else {
-        alert("STEP2");
+        alert("STEP3");
         alert("getUserMedia() not available.")
     }
 
