@@ -97,7 +97,7 @@
    * */
   function cameraStart(){
     alert("STEP1");
-    console.log("STEP1", navigator.mediaDevices);
+    console.log("STEP1", navigator);
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     if(navigator.getUserMedia) {
